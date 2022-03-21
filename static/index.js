@@ -20,14 +20,12 @@ const addContent = function (arr) {
 addContent(arrTitles);
 
 function commify(n) {
-  const parts = n.toString().split(".");
-  const numberPart = parts[0];
-  const decimalPart = parts[1];
-  const thousands = /\B(?=(\d{3})+(?!\d))/g;
-  return (
-    numberPart.replace(thousands, ",") + (decimalPart ? "." + decimalPart : "")
-  );
+  
+  const commified = n.toString().replace( /\B(?=(\d{3})+(?!\d))/g,",");
+  return commified;
 }
+
+
 
 const arrSubscribers = convertArr(SubscribersHtml);
 const addSubs = function (arr) {
